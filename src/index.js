@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { ApolloClient, ApolloProvider, InMemoryCache, ApolloLink, HttpLink } from '@apollo/client'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
@@ -9,9 +9,12 @@ import { mode } from '@chakra-ui/theme-tools'
 import App from './App'
 import Fonts from './components/Fonts/Fonts'
 
+const httpLink = new HttpLink({
+	uri: 'https://api.spacex.land/graphql/'
+})
 const client = new ApolloClient({
-	uri: 'https://api.spacex.land/graphql/',
-	cache: new InMemoryCache()
+	cache: new InMemoryCache(),
+	link: httpLink
 })
 
 const config = {

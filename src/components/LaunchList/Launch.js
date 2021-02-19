@@ -4,17 +4,15 @@ import { Link } from '@reach/router'
 
 // STYLES
 import { AspectRatio, Box, Button, Heading, Image, Text } from '@chakra-ui/react'
+import LazyLoad from 'react-lazyload'
+import LazyLoadImg from '../LazyLoadImg/LazyLoadImg'
 
 const Launch = ({ launch }) => {
+	const imgSrc = launch.links.flickr_images.length > 0 ? launch.links.flickr_images[0] : launch.links.mission_patch
 	return (
 		<Box width='300px' borderRadius='.5rem' border='1px' boxShadow='md'>
 			<AspectRatio ratio={1}>
-				<Image
-					src={launch.links.flickr_images.length > 0 ? launch.links.flickr_images[0] : launch.links.mission_patch}
-					alt={launch.mission_name}
-					borderRadius='.5rem'
-					objectFit='cover'
-				/>
+				<LazyLoadImg src={imgSrc} alt={launch.mission_name} />
 			</AspectRatio>
 			<Box p='1rem'>
 				<Heading as='h2' fontSize='lg' py='.5rem'>

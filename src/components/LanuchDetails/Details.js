@@ -1,5 +1,8 @@
 import React from 'react'
 
+// COMPONENTS
+import LazyLoadImg from '../LazyLoadImg/LazyLoadImg'
+
 // STYLES
 import {
 	AspectRatio,
@@ -10,7 +13,6 @@ import {
 	GridItem,
 	Heading,
 	HStack,
-	Image,
 	Link,
 	Spacer,
 	Stack,
@@ -20,15 +22,13 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const Details = ({ launch }) => {
 	return (
-		<Grid templateColumns={['repeat(1, 1fr)', null, 'repeat(12, 1fr)']} gap='1.5rem'>
+		<Grid templateColumns={['repeat(1, 1fr)', null, 'repeat(12, 1fr)']} gap='1rem'>
 			<GridItem colStart={[1, null, 1]} colSpan={[null, null, 4]}>
 				<Box maxW='100%' boxShadow='md' borderRadius='0.5rem'>
 					<AspectRatio ratio={{ base: 4 / 3, md: 1 }}>
-						<Image
+						<LazyLoadImg
 							src={launch.links.flickr_images.length > 0 ? launch.links.flickr_images[0] : launch.links.mission_patch}
 							alt={launch.mission_name}
-							borderRadius='.5rem'
-							objectFit='cover'
 						/>
 					</AspectRatio>
 				</Box>
@@ -86,7 +86,7 @@ const Details = ({ launch }) => {
 							>
 								{launch.links.flickr_images.map(img => (
 									<AspectRatio ratio={4 / 3} key={img}>
-										<Image src={img} alt={launch.mission_name} borderRadius='.5rem' objectFit='cover' />
+										<LazyLoadImg src={img} alt={launch.mission_name} />
 									</AspectRatio>
 								))}
 							</Grid>
