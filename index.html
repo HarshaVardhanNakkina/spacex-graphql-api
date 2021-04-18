@@ -20,5 +20,16 @@
 	<body>
 		<div id="App"></div>
 		<script src="src/index.js"></script>
+		<script>
+			const sw = 'serviceworker.js'
+			if ('serviceWorker' in navigator) {
+				console.log('Can Install Service Worker')
+				window.addEventListener('load', function () {
+					console.log('Window Load Event')
+					// navigator.serviceWorker.register(new URL('serviceworker.js', import.meta.url))
+					navigator.serviceWorker.register(sw)
+				})
+			}
+		</script>
 	</body>
 </html>
