@@ -57,15 +57,8 @@ if ('serviceWorker' in navigator) {
 	console.log('Can Install Service Worker')
 	window.addEventListener('load', () => {
 		console.log('Window Load Event')
-		navigator.serviceWorker
-			.register(new URL('../serviceworker.js', import.meta.url), {
-				scope: '/'
-			})
-			.then(function (registration) {
-				console.log('Registration successful, scope is:', registration.scope)
-			})
-			.catch(function (error) {
-				console.log('Service worker registration failed, error:', error)
-			})
+		navigator.serviceWorker.register(new URL('../serviceworker.js', import.meta.url), {
+			scope: '/'
+		})
 	})
 }
