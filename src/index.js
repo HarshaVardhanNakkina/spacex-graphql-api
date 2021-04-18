@@ -52,9 +52,3 @@ ReactDOM.render(
 	</ApolloProvider>,
 	document.getElementById('App')
 )
-
-if ('serviceWorker' in navigator) {
-	window.addEventListener('load', function () {
-		navigator.serviceWorker.register(new URL('../serviceworker.js', import.meta.url))
-	})
-}
