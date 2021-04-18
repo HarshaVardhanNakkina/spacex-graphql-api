@@ -21,37 +21,15 @@
 		<div id="App"></div>
 		<script src="src/index.js"></script>
 		<script>
-			// if ('serviceWorker' in navigator) {
-			// 	console.log('Can Install Service Worker')
-			// 	window.addEventListener('load', () => {
-			// 		console.log('Window Load Event')
-			// 		navigator.serviceWorker
-			// 			.register('./serviceworker.js')
-			// 			.then(registration => {
-			// 				registration.onupdatefound = () => {
-			// 					const installingWorker = registration.installing
-			// 					if (installingWorker == null) {
-			// 						return
-			// 					}
-			// 					installingWorker.onstatechange = () => {
-			// 						if (installingWorker.state === 'installed') {
-			// 							if (navigator.serviceWorker.controller) {
-			// 								console.log(
-			// 									'New content is available and will be used when all ' +
-			// 										'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
-			// 								)
-			// 							} else {
-			// 								console.log('Content is cached for offline use.')
-			// 							}
-			// 						}
-			// 					}
-			// 				}
-			// 			})
-			// 			.catch(error => {
-			// 				console.error('Error during service worker registration:', error)
-			// 			})
-			// 	})
-			// }
+			const sw = 'serviceworker.js'
+			if ('serviceWorker' in navigator) {
+				console.log('Can Install Service Worker')
+				window.addEventListener('load', function () {
+					console.log('Window Load Event')
+					// navigator.serviceWorker.register(new URL('serviceworker.js', import.meta.url))
+					navigator.serviceWorker.register(sw)
+				})
+			}
 		</script>
 	</body>
 </html>
