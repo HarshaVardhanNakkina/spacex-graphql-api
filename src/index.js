@@ -52,7 +52,6 @@ ReactDOM.render(
 	</ApolloProvider>,
 	document.getElementById('App')
 )
-
 // if ('serviceWorker' in navigator) {
 // 	console.log('Can Install Service Worker')
 // 	window.addEventListener('load', function () {
