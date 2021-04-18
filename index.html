@@ -21,13 +21,13 @@
 		<div id="App"></div>
 		<script src="src/index.js"></script>
 		<script>
-			if ('serviceWorker' in navigator) {
-				console.log('Can Install Service Worker')
-				window.addEventListener('load', function () {
-					console.log('Window Load Event')
-					navigator.serviceWorker.register(new URL('./serviceworker.js', import.meta.url))
-				})
-			}
+			// if ('serviceWorker' in navigator) {
+			// 	console.log('Can Install Service Worker')
+			// 	window.addEventListener('load', function () {
+			// 		console.log('Window Load Event')
+			// 		navigator.serviceWorker.register(new URL('./serviceworker.js', import.meta.url))
+			// 	})
+			// }
 		</script>
 	</body>
 </html>
