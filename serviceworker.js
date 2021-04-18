@@ -7,7 +7,6 @@ const assetsToCache = [
 	'/LaunchList.3a597d7a.js',
 	'/LaunchDetails.2296d362.js',
 	'/LaunchList.5b63792f.js',
-	'/manifest.webmanifest',
 	'/index.542a857c.css'
 ]
 
