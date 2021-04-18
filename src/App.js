@@ -40,9 +40,9 @@ export default function App() {
 				<GridItem>
 					<Footer />
 				</GridItem>
-				<GridItem bg={bg} position={{ base: 'sticky', sm: 'sticky', md: 'unset' }} bottom='0' zIndex='2'>
+				{/* <GridItem bg={bg} position={{ base: 'sticky', sm: 'sticky', md: 'unset' }} bottom='0' zIndex='2'>
 					<Footer />
-				</GridItem>
+				</GridItem> */}
 			</Grid>
 		</Container>
 	)
