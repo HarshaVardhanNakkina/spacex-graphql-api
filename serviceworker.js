@@ -1,4 +1,5 @@
 console.log('Service Worker Registered')
+
 const version = 'v1'
 
 const assetsToCache = [
