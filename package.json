@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "parcel ./src/index.html --port 3030",
-		"build": "parcel build ./src/index.html",
+		"build": "parcel build --no-scope-hoist ./src/index.html",
 		"generate": "graphql-codegen --config codegen.yml"
 	},
 	"devDependencies": {
