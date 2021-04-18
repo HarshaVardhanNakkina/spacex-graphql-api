@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"start": "parcel ./src/index.html --port 3030",
+		"dev": "parcel ./src/index.html --port 3030",
 		"build": "parcel build ./src/index.html",
 		"generate": "graphql-codegen --config codegen.yml"
 	},

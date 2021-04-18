@@ -11,17 +11,17 @@ const Launch = ({ launch }) => {
 	const imgSrc = launch.links.flickr_images.length > 0 ? launch.links.flickr_images[0] : launch.links.mission_patch
 	return (
 		<Box width='300px' borderRadius='.5rem' border='1px' boxShadow='md'>
-			<AspectRatio ratio={1}>
+			{/* <AspectRatio ratio={1}>
 				<LazyLoadImg src={imgSrc} alt={launch.mission_name} />
-			</AspectRatio>
+			</AspectRatio> */}
 			<Box p='1rem'>
 				<Heading as='h2' fontSize='lg' py='.5rem'>
 					{launch.mission_name}
 				</Heading>
-				<Text color='gray.500' fontSize='md'>
+				<Text color='gray.600' fontSize='md'>
 					🚀 {launch.rocket.rocket_name}
 				</Text>
-				<Text color='gray.500' fontSize='md'>
+				<Text color='gray.600' fontSize='md'>
 					{new Date(launch.launch_date_utc).toLocaleString()}
 				</Text>
 				<Link to={`launch/${launch.id}`}>

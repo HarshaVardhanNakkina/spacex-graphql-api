@@ -38,7 +38,7 @@ const Details = ({ launch }) => {
 					<Stack direction='column' spacing='1rem'>
 						<Box>
 							<Heading>{launch.mission_name}</Heading>
-							<Text color='gray.500' fontSize='md'>
+							<Text color='gray.600' fontSize='md'>
 								🚀 {launch.rocket.rocket_name} | {new Date(launch.launch_date_utc).toLocaleString()}
 							</Text>
 						</Box>
@@ -47,7 +47,7 @@ const Details = ({ launch }) => {
 						</Box>
 						<Divider />
 						<HStack alignItems='center'>
-							<Text color='gray.500' fontWeight='bold'>
+							<Text color='gray.600' fontWeight='bold'>
 								Launch Site
 							</Text>
 							<Spacer />
@@ -55,7 +55,7 @@ const Details = ({ launch }) => {
 						</HStack>
 						<Divider />
 						<HStack alignItems='center'>
-							<Text color='gray.500' fontWeight='bold'>
+							<Text color='gray.600' fontWeight='bold'>
 								Article
 							</Text>
 							<Spacer />
@@ -65,7 +65,7 @@ const Details = ({ launch }) => {
 						</HStack>
 						<Divider />
 						<HStack>
-							<Text color='gray.500' fontWeight='bold'>
+							<Text color='gray.600' fontWeight='bold'>
 								Video
 							</Text>
 							<Spacer />
@@ -75,7 +75,7 @@ const Details = ({ launch }) => {
 						</HStack>
 						<Divider />
 						<Stack>
-							<Text color='gray.500' fontWeight='bold'>
+							<Text color='gray.600' fontWeight='bold'>
 								Pictures
 							</Text>
 							<Grid

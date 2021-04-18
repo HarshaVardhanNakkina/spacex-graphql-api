@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 
 import { Router } from '@reach/router'
 
 // COMPONENTS
-import LaunchList from './components/LaunchList/LaunchList'
-import LaunchDetails from './components/LanuchDetails/LaunchDetails'
+const LaunchList = lazy(() => import('./components/LaunchList/LaunchList'))
+const LaunchDetails = lazy(() => import('./components/LanuchDetails/LaunchDetails'))
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 
 // STYLES
 import { Container, Grid, GridItem, HStack, Image, Text } from '@chakra-ui/react'
+import Loading from './components/Loading/Loading'
 
 export default function App() {
 	return (
@@ -20,10 +21,12 @@ export default function App() {
 				</GridItem>
 				<GridItem>
 					<Container as='main' maxW='100%' p={{ base: '.5rem', lg: '1rem' }}>
-						<Router>
-							<LaunchList path='/' />
-							<LaunchDetails path='/launch/:launchID' />
-						</Router>
+						<Suspense fallback={<Loading />}>
+							<Router>
+								<LaunchList path='/' />
+								<LaunchDetails path='/launch/:launchID' />
+							</Router>
+						</Suspense>
 					</Container>
 				</GridItem>
 				<GridItem>
