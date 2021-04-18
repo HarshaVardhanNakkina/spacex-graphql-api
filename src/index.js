@@ -53,10 +53,10 @@ ReactDOM.render(
 	document.getElementById('App')
 )
 
-if ('serviceWorker' in navigator) {
-	console.log('Can Install Service Worker')
-	window.addEventListener('load', function () {
-		console.log('Window Load Event')
-		navigator.serviceWorker.register(new URL('../serviceworker.js', import.meta.url))
-	})
-}
+// if ('serviceWorker' in navigator) {
+// 	console.log('Can Install Service Worker')
+// 	window.addEventListener('load', function () {
+// 		console.log('Window Load Event')
+// 		navigator.serviceWorker.register(new URL('../serviceworker.js', import.meta.url))
+// 	})
+// }
