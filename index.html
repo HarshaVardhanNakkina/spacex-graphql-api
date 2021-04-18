@@ -20,5 +20,13 @@
 	<body>
 		<div id="App"></div>
 		<script src="src/index.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function () {
+					console.log('Window Load Event')
+					navigator.serviceWorker.register(new URL('serviceworker.js', import.meta.url))
+				})
+			}
+		</script>
 	</body>
 </html>
