@@ -1,8 +1,8 @@
 import React from 'react'
 
 // STYLES
-import ReactIcon from '../../../public/react.svg'
-import GraphqlIcon from '../../../public/graphql.svg'
+import ReactIcon from 'url:../../../public/react.svg'
+import GraphqlIcon from 'url:../../../public/graphql.svg'
 import { HStack, Image, Text } from '@chakra-ui/react'
 
 const Footer = () => {

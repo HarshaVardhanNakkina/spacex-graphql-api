@@ -11,9 +11,9 @@ const Launch = ({ launch }) => {
 	const imgSrc = launch.links.flickr_images.length > 0 ? launch.links.flickr_images[0] : launch.links.mission_patch
 	return (
 		<Box width='300px' borderRadius='.5rem' border='1px' boxShadow='md'>
-			{/* <AspectRatio ratio={1}>
+			<AspectRatio ratio={1}>
 				<LazyLoadImg src={imgSrc} alt={launch.mission_name} />
-			</AspectRatio> */}
+			</AspectRatio>
 			<Box p='1rem'>
 				<Heading as='h2' fontSize='lg' py='.5rem'>
 					{launch.mission_name}

@@ -19,6 +19,7 @@ import {
 	Text
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import Pictures from './Pictures'
 
 const Details = ({ launch }) => {
 	return (
@@ -78,18 +79,7 @@ const Details = ({ launch }) => {
 							<Text color='gray.600' fontWeight='bold'>
 								Pictures
 							</Text>
-							<Grid
-								templateColumns='repeat(auto-fill, minmax(200px, 1fr))'
-								autoRows='200px'
-								gap='1rem'
-								autoFlow='dense'
-							>
-								{launch.links.flickr_images.map(img => (
-									<AspectRatio ratio={4 / 3} key={img}>
-										<LazyLoadImg src={img} alt={launch.mission_name} />
-									</AspectRatio>
-								))}
-							</Grid>
+							<Pictures pictures={launch?.links?.flickr_images} missionName={launch?.mission_name} />
 						</Stack>
 					</Stack>
 				</Container>
