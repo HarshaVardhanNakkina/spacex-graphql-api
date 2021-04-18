@@ -10,11 +10,12 @@ import { usePastLaunchesListQuery } from '../../gql/graphql'
 import Launch from './Launch'
 import Loading from '../Loading/Loading'
 
-export default function LaunchList(params) {
+export default function LaunchList({ pageNumber, perPage: limit }) {
+	const offset = pageNumber * limit
 	const { loading, data, error } = usePastLaunchesListQuery({
 		variables: {
-			limit: 10,
-			offset: 10
+			limit,
+			offset
 		}
 	})
 
