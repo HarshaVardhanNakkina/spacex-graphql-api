@@ -4,7 +4,7 @@ import { Router } from '@reach/router'
 
 // COMPONENTS
 const LaunchList = lazy(() => import('./components/LaunchList/LaunchList'))
-const LaunchDetails = lazy(() => import('./components/LanuchDetails/LaunchDetails'))
+const LaunchDetails = lazy(() => import('./components/LaunchDetails/LaunchDetails'))
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Loading from './components/Loading/Loading'
