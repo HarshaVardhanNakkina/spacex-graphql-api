@@ -16,7 +16,7 @@ export default function LaunchDetails(props) {
 	})
 	let component = null
 	if (loading) component = <Loading />
-	else if (error) component = <Error />
+	else if (error) component = <Error message={error.message + '.'} />
 	else component = <Details launch={data.launch} />
 
 	return component

@@ -9,8 +9,9 @@ import { usePastLaunchesListQuery } from '../../gql/graphql'
 // COMPONENTS
 import Launch from './Launch'
 import Loading from '../Loading/Loading'
+import Error from '../Error/Error'
 
-export default function LaunchList({ pageNumber, perPage: limit }) {
+const LaunchList = ({ pageNumber, perPage: limit }) => {
 	const offset = pageNumber * limit
 	const { loading, data, error } = usePastLaunchesListQuery({
 		variables: {
@@ -21,7 +22,7 @@ export default function LaunchList({ pageNumber, perPage: limit }) {
 
 	let component = null
 	if (loading) component = <Loading />
-	else if (error) component = <Error />
+	else if (error) component = <Error message={error.message + '.'} />
 	else {
 		component = (
 			<Flex justifyContent='center' wrap='wrap' align='flex-start' gridGap='1.5rem' py={{ base: '.5rem', lg: '1rem' }}>
@@ -33,3 +34,5 @@ export default function LaunchList({ pageNumber, perPage: limit }) {
 	}
 	return component
 }
+
+export default LaunchList
