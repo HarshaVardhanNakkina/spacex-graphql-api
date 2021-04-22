@@ -16,12 +16,14 @@ import {
 	Link,
 	Spacer,
 	Stack,
-	Text
+	Text,
+	useColorModeValue
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import Pictures from './Pictures'
 
 const Details = ({ launch }) => {
+	const color = useColorModeValue('gray.600', 'gray.400')
 	return (
 		<Grid templateColumns={['repeat(1, 1fr)', null, 'repeat(12, 1fr)']} gap='1rem'>
 			<GridItem colStart={[1, null, 1]} colSpan={[null, null, 4]}>
@@ -39,7 +41,7 @@ const Details = ({ launch }) => {
 					<Stack direction='column' spacing='1rem'>
 						<Box>
 							<Heading>{launch.mission_name}</Heading>
-							<Text color='gray.600' fontSize='md'>
+							<Text color={color} fontSize='md'>
 								🚀 {launch.rocket.rocket_name} | {new Date(launch.launch_date_utc).toLocaleString()}
 							</Text>
 						</Box>
@@ -48,7 +50,7 @@ const Details = ({ launch }) => {
 						</Box>
 						<Divider />
 						<HStack alignItems='center'>
-							<Text color='gray.600' fontWeight='bold'>
+							<Text color={color} fontWeight='bold'>
 								Launch Site
 							</Text>
 							<Spacer />
@@ -56,7 +58,7 @@ const Details = ({ launch }) => {
 						</HStack>
 						<Divider />
 						<HStack alignItems='center'>
-							<Text color='gray.600' fontWeight='bold'>
+							<Text color={color} fontWeight='bold'>
 								Article
 							</Text>
 							<Spacer />
@@ -66,7 +68,7 @@ const Details = ({ launch }) => {
 						</HStack>
 						<Divider />
 						<HStack>
-							<Text color='gray.600' fontWeight='bold'>
+							<Text color={color} fontWeight='bold'>
 								Video
 							</Text>
 							<Spacer />
@@ -76,7 +78,7 @@ const Details = ({ launch }) => {
 						</HStack>
 						<Divider />
 						<Stack>
-							<Text color='gray.600' fontWeight='bold'>
+							<Text color={color} fontWeight='bold'>
 								Pictures
 							</Text>
 							<Pictures pictures={launch?.links?.flickr_images} missionName={launch?.mission_name} />
