@@ -1,14 +1,10 @@
 # ![SpaceX Launches](./screenshots/SpacexLaunches.png)
 
+![Twitter Follow](https://img.shields.io/twitter/follow/Ganeshh___?style=social) &emsp; ![GitHub last commit](https://img.shields.io/github/last-commit/HarshaVardhanNakkina/spacex-graphql-api?style=flat-square) &emsp; ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=spacex-graphql-api&style=flat-square)
+
 ## Description
 
-<table>
-<tr>
-<td>
 This is a small web application for displaying the details of SpaceX Launches.
-</td>
-</tr>
-</table>
 
 ## Demo
 
